@@ -1,0 +1,50 @@
+{
+  "brand": "Casa d'Arte",
+  "nav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "about": "About",
+    "contacts": "Contacts",
+    "cart": "Cart"
+  },
+
+  "hero": {
+    "title": "<brand>Casa d'Arte</brand>",
+    "subtitle": "Curated interior pieces. We bring comfort and style to your home.",
+    "cta": "Browse catalog",
+    "about": "About us"
+  },
+
+  "about": {
+    "title": "About us",
+    "body": "<brand>Casa d'Arte</brand> is a curated interior store. We select pieces with <em>character</em> and <em>history</em> to make your home unique, cozy and aesthetically pleasing."
+  },
+
+  "catalog": {
+    "title": "Catalog",
+    "add": "Add to cart",
+    "priceSuffix": "$"
+  },
+
+  "contacts": {
+    "title": "Contacts",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "address_value": "Moscow, Primernaya St., 1",
+    "orderNote": "To order, message — {{handle}}"
+  },
+
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty.",
+    "toCatalog": "Go to catalog",
+    "clear": "Clear",
+    "checkout": "Checkout in Telegram",
+    "total": "Total"
+  },
+
+  "footer": {
+    "tagline": "Curated interior pieces • Style & comfort"
+  }
+}

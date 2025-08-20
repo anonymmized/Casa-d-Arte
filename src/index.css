@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* ── ТЕМА (твои токены) ───────────────────────────────────────────────────── */
+@theme {
+  --color-grayLight: #F3F4F6; /* фон светлой темы */
+  --color-gold:      #dbb995;
+  --color-beige:     #c7bbae;
+  --color-ink:       #111827; /* текст светлой темы */
+
+  --shadow-card: 0 12px 40px rgba(0,0,0,0.07);
+  --radius-xl:  1rem;
+  --radius-2xl: 1.25rem;
+
+  --font-sans: "Manrope", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* ── БАЗА ──────────────────────────────────────────────────────────────────── */
+@layer base {
+  html { scroll-behavior: smooth; }
+  html, body { height: 100%; }
+  body { @apply bg-grayLight text-ink font-sans antialiased; }
+}
+
+/* ── ТЁМНАЯ ТЕМА: переопределяем те же токены ─────────────────────────────── */
+@layer base {
+  .dark {
+    --color-grayLight: #0B0F14; /* общий фон */
+    --color-ink:       #EAEAEA; /* основной текст */
+  }
+}
+
+/* ── УТИЛИТЫ / КОМПОНЕНТНЫЕ КЛАССЫ ───────────────────────────────────────── */
+@layer utilities {
+  /* карточки/поверхности */
+  .card {
+    @apply rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur
+           shadow-[0_20px_60px_rgba(0,0,0,0.35)] px-6 sm:px-8 lg:px-10 py-8 sm:py-10;
+  }
+  .card-glass { /* алиас — если где-то уже использован */
+    @apply rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur;
+  }
+  .bg-surface { @apply bg-white/5; }
+
+  /* кнопки */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-xl px-4 py-2 font-medium
+           bg-gold text-black/90
+           hover:bg-gold/90 active:translate-y-[1px]
+           transition;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-xl px-4 py-2 font-medium
+           text-gold ring-1 ring-gold/40
+           hover:bg-gold/10 active:translate-y-[1px]
+           transition;
+  }
+
+  /* подчёркивания/выделения */
+  .hl { @apply text-gold; }
+  .hl-strong { @apply text-gold font-semibold drop-shadow-[0_1px_0_rgba(0,0,0,0.2)]; }
+  .hl-underline { @apply underline decoration-gold/70 underline-offset-4; }
+  .underline-grad {
+    background-image: linear-gradient(to right, color-mix(in oklab, var(--color-gold) 90%, transparent) 0%, transparent 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.18em;
+    background-position: 0 95%;
+    padding-bottom: 0.05em;
+  }
+
+  /* лёгкая тень у крупных заголовков */
+  .text-shadow-lg {
+    text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+  }
+
+  /* «чип»-ссылки (если понадобятся где-то) */
+  .chip-link {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full
+           bg-gold/10 text-gold ring-1 ring-gold/30 hover:bg-gold/15 transition;
+  }
+  .no-bg {
+    background: transparent !important;
+    background-image: none !important;
+  }
+  .blend-normal { mix-blend-mode: normal !important; }
+
+}
